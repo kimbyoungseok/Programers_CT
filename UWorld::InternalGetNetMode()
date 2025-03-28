@@ -1,0 +1,14 @@
+// World.cpp
+
+...
+
+ENetMode UWorld::InternalGetNetMode() const
+{
+	if ( NetDriver != NULL )                                      // 넷드라이버가 설정되어 있으면
+	{
+		const bool bIsClientOnly = IsRunningClientOnly();
+		return bIsClientOnly ? NM_Client : NetDriver->GetNetMode(); // 클라이언트 아니면 서버 둘 중 하나다.
+	}
+
+	...
+}
