@@ -1,0 +1,17 @@
+// CXGameModeBase.h
+
+...
+class CHATX_API ACXGameModeBase : public AGameModeBase
+{
+	...
+
+public:
+	...
+
+	FString GenerateSecretNumber();
+
+	bool IsGuessNumberString(const FString& InNumberString);
+
+	FString JudgeResult(const FString& InSecretNumberString, const FString& InGuessNumberString);
+	
+};
